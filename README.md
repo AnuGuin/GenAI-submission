@@ -1,6 +1,11 @@
 # GenAI Workshop — Problem Solving Round
 
 A full-stack agentic AI application demonstrating solutions to all 4 workshop problems using **Gemini 2.5 Flash**, **FastAPI**, and **Next.js**.
+**Easy:** A side-by-side prompt engineering demo that runs the same query through a raw (no system prompt, temp 0.9) and an engineered (structured system prompt, temp 0.3) setup simultaneously — making the quality difference immediately visible.
+**Medium:** A LangGraph-powered agentic router with a typed AgentState that flows through a compiled state graph: a classifier node uses Gemini to detect intent (DIRECT / WEB_SEARCH / WEATHER / RAG), a conditional edge routes to the appropriate tool node, and a final answer node formats the response. The routing decision is streamed live to the UI.
+**Hard:** An interactive context compression lab with three selectable strategies — sliding window (keep last N words), summarization chain (chunk → compress → meta-summarize via Gemini), and hierarchical memory (Gemini extracts episodic, semantic, and archival layers as structured JSON) — with compression ratio stats and optional follow-up Q&A on the compressed context.
+**Complex:** A text-to-SQL pipeline where Gemini generates a SQLite query from natural language, executes it on an uploaded CSV/Excel dataset, and returns both the results table and a natural language answer — alongside a Gemini-generated explanation of exactly why RAG would fail on the same question.
+The RAG component uses ChromaDB (persistent vector store with cosine similarity) for document ingestion across PDF, DOCX, and TXT formats.
 
 ---
 
@@ -40,7 +45,7 @@ backend/    → FastAPI (Python 3.13)
 cp backend/.env.example backend/.env
 # Edit .env and add your keys:
 # GEMINI_API_KEY=your_key      (required)
-# OPENWEATHER_API_KEY=your_key (optional, for weather routing)
+# TAVILY_API_KEY=your_key      (required)
 ```
 
 Get Gemini API key free at: https://aistudio.google.com/
