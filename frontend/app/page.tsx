@@ -7,6 +7,7 @@ import ComplexPanel from "@/components/Complexpanel";
 import { ModeToggle } from "@/components/mode-toggle";
 import { AppSidebar } from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
+import { Github } from "lucide-react";
 import {
   SidebarInset,
   SidebarProvider,
@@ -35,6 +36,14 @@ export default function Home() {
             <span className="w-2 h-2 rounded-full bg-easy animate-pulse2" />
             <span className="text-xs text-muted-foreground mr-4 font-mono hidden sm:inline-block">Gemini 2.5 Flash</span>
             <ModeToggle />
+            <a 
+              href="https://github.com/AnuGuin/GenAI-submission" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors ml-1"
+            >
+              <Github className="h-5 w-5" />
+            </a>
           </div>
         </header>
 
