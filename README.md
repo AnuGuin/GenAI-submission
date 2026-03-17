@@ -1,6 +1,6 @@
 # GenAI Workshop — Problem Solving Round
 
-A full-stack agentic AI application demonstrating solutions to all 4 workshop problems using **Gemini 1.5 Flash**, **FastAPI**, and **Next.js**.
+A full-stack agentic AI application demonstrating solutions to all 4 workshop problems using **Gemini 2.5 Flash**, **FastAPI**, and **Next.js**.
 
 ---
 
@@ -105,19 +105,11 @@ POST /api/complex/query
 → { sql, results, nl_answer, rag_comparison }
 ```
 
----
-
-## Running in Google Colab
-
-See `colab_demo.ipynb` — installs dependencies, runs the FastAPI backend with ngrok tunnel, and demonstrates all 4 endpoints programmatically.
-
----
 
 ## Tech Stack
 
-- **LLM**: Google Gemini 1.5 Flash (`google-generativeai`)
-- **Vector Search**: FAISS + `sentence-transformers` (all-MiniLM-L6-v2)
+- **LLM**: Google Gemini 2.5 Flash (`google-generativeai`)
+- **Vector Search**: ChromaDB + `sentence-transformers` (all-MiniLM-L6-v2)
 - **Structured Queries**: SQLite via pandas + Gemini text-to-SQL
 - **Backend**: FastAPI with async streaming (SSE)
-- **Frontend**: Next.js 14, Tailwind CSS, Framer Motion
-- **Fonts**: Syne (display) + DM Sans (body) + JetBrains Mono (code)
+- **Frontend**: Next.js 16, Tailwind CSS, Framer Motion
