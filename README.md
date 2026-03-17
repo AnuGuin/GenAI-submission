@@ -11,6 +11,8 @@ The RAG component uses ChromaDB (persistent vector store with cosine similarity)
 
 ## Architecture
 
+![Architecture](Archietecture.png)
+
 ```
 frontend/   → Next.js 16 (TypeScript, Tailwind, Framer Motion)
 backend/    → FastAPI (Python 3.13)
